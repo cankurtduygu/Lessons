@@ -1,10 +1,17 @@
-import './App.css';
-import AppRouter from './router/AppRouter';
+import "./App.css";
+
+import AppRouter from "./router/AppRouter";
+
+// Toastify kütüphanesini kullanabilmek için yarn add ile ekliyoruz, indexedDB.js ye teşekkür yolu ekliyoruz, App.js ye (bütün projede kullanmak istiyorsak)   <ToastContainer /> etiketini ekliyoruz
+
 
 function App() {
   return (
-    <div className="App">
-      <AppRouter />
+    <div>
+    <AppRouter />
+
+    
+
     </div>
   );
 }
