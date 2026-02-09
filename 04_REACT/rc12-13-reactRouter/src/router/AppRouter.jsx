@@ -8,6 +8,8 @@ import ContactForm from "../pages/ContactForm";
 import Paths from "../pages/Paths";
 import Login from "../pages/Login";
 import PrivateRouter from "./PrivateRouter";
+import CardDetail from "../pages/CardDetail";
+import TeacherDetail from "../pages/TeacherDetail";
 
 const AppRouter = () => {
   return (
@@ -23,7 +25,11 @@ const AppRouter = () => {
 
         <Route path="/Login" element={<Login />} />
         <Route path="/teacher" element={<Teacher />} />
+        <Route path="/teacher/:no" element={<TeacherDetail />} />
+
         <Route path="/courses" element={<CourseCard />} />
+        <Route path="/courses/:name" element={<CardDetail />} />
+        
 
         {/* şifre kontrolü ile girilebilen sayfalar önce PrivateRouter a yönlendirilir, oradan şifreniz doğruysa istenilen sayfaya gidebilirsiniz */}
         <Route path="/contact" element={<PrivateRouter />}>

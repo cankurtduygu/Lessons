@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
@@ -18,6 +19,18 @@ const Login = () => {
     localStorage.setItem("sifre", password);
 
     navigate("/contact")
+
+    toast.error("🚀 Wow so easy!", {
+  position: "top-right",
+  autoClose: 1000,
+  hideProgressBar: false,
+  closeOnClick: false,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+});
+
   }
 
   return (

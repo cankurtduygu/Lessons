@@ -21,12 +21,15 @@ const MyNavbar = () => {
               className='nav-link'>Home</NavLink>
             <NavLink
               style={({isActive})=>({fontSize: isActive && "50px" })}
+              to="/teacher"
               className='nav-link'>Teacher</NavLink>
             <NavLink
               style={({isActive})=>({backgroundColor: isActive && "yellow" })}
+              to="/courses"
               className='nav-link'>Courses</NavLink>
             <NavLink
-              style={({isActive})=>({color: isActive && "red" })} to="/contact" 
+              style={({isActive})=>({color: isActive && "red" })} 
+              to="/contact" 
               className='nav-link'>Contact</NavLink>
             <NavLink
               style={({isActive})=>({color: isActive && "red" })} to="/paths" 
