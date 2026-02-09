@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { createContext } from 'react'
 
-const KullaniciProvider = () => {
+
+//! 1- Create Context
+
+export const KullaniciContext = createContext();
+
+const KullaniciProvider = ({children}) => {
   return (
-    <div>KullaniciProvider</div>
+    //! 2- childrenlara gidecek veriler icin Provider (sarmal) yaptik
+    <KullaniciContext.Provider value={{}}>
+        {children}
+    </KullaniciContext.Provider>
   )
 }
 
