@@ -1,14 +1,16 @@
-import './App.css'
+import './App.css';
+import Sizing from './components/Sizing';
+import Responsive from './components/Responsive';
 
 function App() {
-
-
   return (
     <>
-    <h1>this is tailwind intro</h1>
-     
+      <div className="bg-gray-800 h-20 min-h-screen text-white">
+        {/* <Sizing /> */}
+        <Responsive />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
