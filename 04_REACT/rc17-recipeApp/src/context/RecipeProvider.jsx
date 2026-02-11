@@ -16,19 +16,21 @@ const RecipeProvider = ({children}) => {
   const getData = async () => {
 
     const {data} =await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
-    console.log(data)
-
     setYemekler(data.meals);
+    console.log(yemekler);
 
   }
 
-  getData();
+  // getData();
 
   const veriler = {
     username,
     setUsername,
     password,
-    setPassword
+    setPassword,
+    setQuery,
+    getData,
+    yemekler
   }
 
   return (
