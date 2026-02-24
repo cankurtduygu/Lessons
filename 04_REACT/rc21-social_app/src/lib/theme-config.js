@@ -29,7 +29,7 @@ export const getDesignTokens = (mode) => ({
           },
         }),
     typography: {
-      fontFamily: "Roboro, sans-serif",
+      fontFamily: "Roboto, sans-serif",
     },
   },
 });

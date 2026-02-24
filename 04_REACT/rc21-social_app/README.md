@@ -1,39 +1,18 @@
-# Social App
+# React + Vite
 
-A basic social media app built with React, Vite, Material UI, and React Router.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Current Features
+Currently, two official plugins are available:
 
-- Feed page with mock posts
-- Profile page with user details
-- Friends page with friend cards
-- Messages page with chat-style UI
-- Responsive layout (desktop + mobile drawer)
-- Dark / Light mode toggle
-- Routing with nested pages
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Tech Stack
+## React Compiler
 
-- React
-- Vite
-- Material UI
-- React Router DOM
-- Zustand
-- Faker (mock data)
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
+Note: This will impact Vite dev & build performances.
 
-## Features To Add
+## Expanding the ESLint configuration
 
-- User authentication (login/register)
-- Real backend API integration
-- Create / edit / delete posts
-- Like, comment, and share system
-- Real-time chat with WebSocket
-- Friend requests and notifications
-- Search users and posts
-- Profile editing and image upload
-- Save posts / bookmarks
-- Pagination or infinite scroll
-
-## UI/UX
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -36,7 +36,6 @@ const TodoList = ({ todos, setTodos, setEditingTodo }) => {
   };
 
   return (
-    <>
     <div className="todo-list-container">
       {todos.map((todo) => {
         return (
@@ -64,7 +63,6 @@ const TodoList = ({ todos, setTodos, setEditingTodo }) => {
         );
       })}
     </div>
-    </>
   );
 };
 

@@ -87,12 +87,6 @@ body {
 }
 
 /* Form styles */
-
-.add-task-container{
-  border-radius: 15px;
-  padding-top: 10px;
-  
-}
 .task-form {
   background: #f8f9fa;
   padding: 2rem;

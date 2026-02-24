@@ -6,7 +6,7 @@
  */
 
 import { useEffect, useState } from "react";
-import AddTask from "../components/AddTask";
+import AddTodo from "../components/AddTodo";
 import Header from "../components/Header";
 import TodoList from "../components/TodoList";
 import { todos as initialTodos } from "../helper/Data";
@@ -37,7 +37,7 @@ const Home = () => {
       />
 
       {isFormVisible && (
-        <AddTask
+        <AddTodo
           setTodos={setTodos}
           todos={todos}
           editingTodo={editingTodo}

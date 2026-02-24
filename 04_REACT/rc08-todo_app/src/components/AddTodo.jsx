@@ -9,7 +9,7 @@ const AddTodo = ({ setTodos, editingTodo, setEditingTodo }) => {
 
   // update initial states for form
   useEffect(() => {
-     console.log(editingTodo);
+    // console.log(editingTodo);
     if (editingTodo) {
       setTodo(editingTodo.text);
       setTodoDate(editingTodo.day);
@@ -54,16 +54,8 @@ const AddTodo = ({ setTodos, editingTodo, setEditingTodo }) => {
   };
 
   return (
-    <div className="add-task-container" style={{background: editingTodo ? '#9eceff' : '#f8f9fa'}}>
+    <div className="add-task-container">
       <form onSubmit={handleSubmit}>
-      
-      {editingTodo && (
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '20px' }}>
-          <button type="button" onClick={handleCancel}>
-            ❌
-          </button>
-        </div>
-      )}
         <div className="form-control">
           <label htmlFor="todo">Todo Description</label>
           <input
@@ -91,7 +83,11 @@ const AddTodo = ({ setTodos, editingTodo, setEditingTodo }) => {
           ➕ Submit
         </button>
         
-        
+        {editingTodo && (
+          <button type="button" onClick={handleCancel}>
+            ❌ Cancel
+          </button>
+        )}
       </form>
     </div>
   );
