@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Counter.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { arttir } from '../../redux/actions/counterActions';
+import { arttir, sifirla, azalt } from '../../redux/actions/counterActions';
 
 const Counter = () => {
 
@@ -23,10 +23,15 @@ const Counter = () => {
     <div>
       <button className='counter-button positive'
               onClick={() => dispatch1(arttir())}
+              //dispatch aslinda garsona para sikistirip istedigii yaptirmak gibi dusunulebilir. Biz de arttir fn ni garsona veriyoruz ve garson da counterReducer.jsx deki switch case lerin devreye girmesini sagliyor.
       >ARTTIR</button>
       {/* arttir fn */}
-      <button className='counter-button'>RESET</button>
-      <button className='counter-button negative'>AZALT</button>
+      <button className='counter-button'
+              onClick={()=>dispatch1(sifirla())}
+      >RESET</button>
+      <button className='counter-button negative'
+              onClick={()=>dispatch1(azalt())}
+      >AZALT</button>
     </div>
 
     </div>

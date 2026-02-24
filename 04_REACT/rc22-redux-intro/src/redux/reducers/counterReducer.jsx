@@ -9,6 +9,8 @@ const counterReducer = (state = { sayac: 0, text:"" }, {type, payload1}) => {
         return {sayac: state.sayac+1, text:payload1}
         case"DECREASE":
         return {sayac: state.sayac-1, text:payload1}
+        case"RESET":
+        return {sayac: 0, text:payload1}
         default:
         return state
     }
