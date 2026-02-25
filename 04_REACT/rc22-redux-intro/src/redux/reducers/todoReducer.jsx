@@ -9,7 +9,7 @@ const initial = {
         loading:false
     };
 
-const todoReducer = (state=initial, {type,payload}) => {
+const         todoReducer = (state=initial, {type,payload}) => {
 
     switch (type) {
         case "REMOVE":

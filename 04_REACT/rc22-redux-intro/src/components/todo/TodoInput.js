@@ -15,7 +15,7 @@ const TodoInput = () => {
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input className='todo-input' 
              type="text" 
              placeholder='Todo Giriniz' 
