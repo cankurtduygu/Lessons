@@ -32,7 +32,7 @@ const TodoList = ({ todos, setTodos, setEditingTodo }) => {
   };
 
   const handleEdit = (todo) => {
-    setEditingTodo(todo)
+    setEditingTodo(todo);
   };
 
   return (
@@ -52,7 +52,9 @@ const TodoList = ({ todos, setTodos, setEditingTodo }) => {
               {todo.day && <p>{new Date(todo.day).toLocaleString()}</p>}
             </div>
 
-            <TiEdit title="Edit Task" onClick={() => handleEdit(todo)} />
+            <TiEdit 
+              title="Edit Task" 
+              onClick={() => handleEdit(todo)} />
 
             <TiDelete
               className="delete-icon"

@@ -4,7 +4,6 @@
  * This is the main page component that manages the state of all todos
  * and coordinates between AddTask and TodoList components
  */
-
 import { useEffect, useState } from "react";
 import AddTodo from "../components/AddTodo";
 import Header from "../components/Header";

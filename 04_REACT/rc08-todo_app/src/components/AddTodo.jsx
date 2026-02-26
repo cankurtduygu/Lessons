@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const AddTodo = ({ setTodos, editingTodo, setEditingTodo }) => {
   // State for the task input field
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState('');
 
   // State for the date/time input field
-  const [todoDate, setTodoDate] = useState("");
+  const [todoDate, setTodoDate] = useState('');
 
   // update initial states for form
   useEffect(() => {
@@ -28,29 +28,41 @@ const AddTodo = ({ setTodos, editingTodo, setEditingTodo }) => {
 
     // Validation: Check if task text is not empty
     if (!todo.trim()) {
-      alert("Please enter a todo!");
+      alert('Please enter a todo!');
       return;
     }
-    // Create new task object with unique ID using Date.now()
-    const newTodo = {
-      id: Date.now(),
-      text: todo,
-      day: todoDate,
-      isDone: false,
-    };
 
-    // Add new task to the beginning of the array using spread operator
-    setTodos((todos) => [newTodo, ...todos]);
+    if (editingTodo) {
+      setTodos((prevTodos) =>
+        prevTodos.map((item) =>
+          item.id === editingTodo.id
+            ? { ...item, text: todo, day: todoDate }
+            : item
+        )
+      );
+      setEditingTodo(null);
+    } else {
+      // Create new task object with unique ID using Date.now()
+      const newTodo = {
+        id: Date.now(),
+        text: todo,
+        day: todoDate,
+        isDone: false,
+      };
+
+      // Add new task to the beginning of the array using spread operator
+      setTodos((prevTodos) => [newTodo, ...prevTodos]);
+    }
 
     // Clear input fields after submission
-    setTodo("");
-    setTodoDate("");
+    setTodo('');
+    setTodoDate('');
   };
 
   const handleCancel = () => {
-    setEditingTodo(null)
-    setTodo("");
-    setTodoDate("");
+    setEditingTodo(null);
+    setTodo('');
+    setTodoDate('');
   };
 
   return (
@@ -80,11 +92,15 @@ const AddTodo = ({ setTodos, editingTodo, setEditingTodo }) => {
         </div>
 
         <button type="submit" className="btn btn-submit">
-          ➕ Submit
+          {editingTodo ? '✏️ Update' : '➕ Submit'}
         </button>
-        
+
         {editingTodo && (
-          <button type="button" onClick={handleCancel}>
+          <button
+            className="btn btn-cancel"
+            type="button"
+            onClick={handleCancel}
+          >
             ❌ Cancel
           </button>
         )}
