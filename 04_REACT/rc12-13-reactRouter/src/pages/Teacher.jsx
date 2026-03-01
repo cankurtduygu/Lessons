@@ -5,7 +5,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Teacher = () => {
-
   const navigation = useNavigate();
 
   const [people, setPeople] = useState([]);
@@ -27,11 +26,8 @@ const Teacher = () => {
           <div key={a.id} className="col-12 col-sm-6 col-md-4 col-lg-3 m-3">
             <img
               // onClick={()=>navigation(`/teacher/${a.id}`)}
-              onClick={() => navigation(`/teacher/${a.id}`, { state: {a} })}
+              onClick={() => navigation(`/teacher/${a.id}`, { state: { a } })}
               style={{ cursor: 'pointer' }}
-
-
-
               src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${a.id}`}
               alt=""
             />

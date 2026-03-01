@@ -10,6 +10,10 @@ import Login from "../pages/Login";
 import PrivateRouter from "./PrivateRouter";
 import CardDetail from "../pages/CardDetail";
 import TeacherDetail from "../pages/TeacherDetail";
+import NotFound from "../pages/NotFound";
+import FS from "../pages/FS";
+import Aws from "../pages/Aws";
+
 
 const AppRouter = () => {
   return (
@@ -26,7 +30,6 @@ const AppRouter = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/teacher/:no" element={<TeacherDetail />} />
-
         <Route path="/courses" element={<CourseCard />} />
         <Route path="/courses/:name" element={<CardDetail />} />
         
@@ -35,7 +38,14 @@ const AppRouter = () => {
         <Route path="/contact" element={<PrivateRouter />}>
           <Route path="" element={<ContactForm />} />
         </Route>
-        <Route path="/paths" element={<Paths />} />
+
+        <Route path="/paths" element={<Paths />}>
+          <Route path="/paths/fs" element={<FS />} />
+          <Route path="aws" element={<Aws />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+
       </Routes>
     </Router>
   );

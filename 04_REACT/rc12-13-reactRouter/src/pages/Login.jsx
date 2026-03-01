@@ -1,42 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState('');
+  const [password, setPass] = useState('');
 
-  const [email, setEmail] = useState("");
-  const [password, setPass] = useState("");
-
-  const handleSubmit =(e)=>{
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     //database e yolla
 
-    localStorage.setItem("email", email);
-    localStorage.setItem("sifre", password);
+    localStorage.setItem('email', email);
+    localStorage.setItem('sifre', password);
 
-    navigate("/contact")
+    navigate('/contact');
 
-    toast.error("🚀 Wow so easy!", {
-  position: "top-right",
-  autoClose: 1000,
-  hideProgressBar: false,
-  closeOnClick: false,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: "light",
-});
-
-  }
+    toast.error('🚀 Wow so easy!', {
+      position: 'top-right',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
+  };
 
   return (
     <div className="container text-center mt-4">
       <h1 className="display-6 text-danger">LOG IN</h1>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             E-mail
@@ -47,8 +44,7 @@ const Login = () => {
             id="email"
             placeholder="Enter your email"
             required
-            onChange={(e)=>(setEmail(e.target.value))}
-           
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="mb-3">
@@ -61,8 +57,7 @@ const Login = () => {
             id="pass"
             placeholder="Enter your password"
             required
-            onChange={(e)=>(setPass(e.target.value))}
-          
+            onChange={(e) => setPass(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-danger mb-4">
@@ -70,7 +65,7 @@ const Login = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

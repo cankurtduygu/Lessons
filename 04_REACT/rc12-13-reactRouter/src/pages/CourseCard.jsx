@@ -1,11 +1,10 @@
-import React from "react";
-import data from "../data";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import data from '../data';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const CourseCard = () => {
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -18,14 +17,17 @@ const CourseCard = () => {
               className="d-flex justify-content-center col-sm-12 col-md-6 col-lg-4"
               key={id}
             >
-              <Card style={{ width: "18rem" }}>
+              <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                   <Card.Title>{name} </Card.Title>
                   <Card.Text>{text}</Card.Text>
                   <Button
-                    onClick={()=>navigate(`/courses/${name}`)}
-                    variant="primary">DETAILS</Button>
+                    onClick={() => navigate(`/courses/${name}`)}
+                    variant="primary"
+                  >
+                    DETAILS
+                  </Button>
                 </Card.Body>
               </Card>
             </Col>

@@ -1,19 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const ContactForm = () => {
-
-  const [info, setInfo] = useState({name: "", email: "", password: ""});
+  const [info, setInfo] = useState({ name: '', email: '', password: '' });
 
   const handleInfo = (e) => {
-    setInfo({...info, [e.target.id]: e.target.value});
-    console.log(info);
-  }
+    setInfo({ ...info, [e.target.id]: e.target.value });
+    // console.log(info);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Form verilerini işleme kodları buraya gelecek
-    console.log("Form submitted:", info);
-  }
+    // console.log('Form submitted:', info);
+  };
 
   return (
     <div className="mt-4 p-3">
@@ -21,10 +20,10 @@ const ContactForm = () => {
         <h1>*********************************</h1>
         <h2>FORM EVENTS</h2>
       </div>
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            Name: 
+            Name:
           </label>
           <input
             type="text"
@@ -32,13 +31,11 @@ const ContactForm = () => {
             id="name"
             required
             onChange={handleInfo}
-          
-          
           />
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Email: 
+            Email:
           </label>
           <input
             type="email"
@@ -46,7 +43,6 @@ const ContactForm = () => {
             id="email"
             required
             onChange={handleInfo}
-       
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
@@ -54,7 +50,7 @@ const ContactForm = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
-            Password: 
+            Password:
           </label>
           <input
             type="password"
@@ -62,7 +58,6 @@ const ContactForm = () => {
             id="password"
             required
             onChange={handleInfo}
-          
           />
         </div>
 
@@ -71,7 +66,7 @@ const ContactForm = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;
