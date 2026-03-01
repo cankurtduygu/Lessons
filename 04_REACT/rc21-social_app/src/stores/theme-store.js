@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { create } from "zustand";
 
 export const getDesignTokens = (mode) => ({
   palette: {
@@ -34,4 +34,12 @@ export const getDesignTokens = (mode) => ({
   },
 });
 
-export const ColorModeContext = createContext({ toggleColorMode: () => {} });
+const useThemeStore = create((set) => ({
+  mode: "dark",
+  toggleColorMode: () =>
+    set((state) => ({
+      mode: state.mode === "light" ? "dark" : "light",
+    })),
+}));
+
+export default useThemeStore;

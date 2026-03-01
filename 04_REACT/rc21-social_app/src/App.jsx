@@ -1,29 +1,18 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
-import { ColorModeContext, getDesignTokens } from "./lib/theme-config";
 import AppRouter from "./router/AppRouter";
+import useThemeStore, { getDesignTokens } from "./stores/theme-store";
 
 function App() {
-  const [mode, setMode] = useState("dark");
+  const mode = useThemeStore((state) => state.mode)
 
-  const colorMode = useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      },
-    }),
-    [],
-  );
-
-  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppRouter />
       </ThemeProvider>
-    </ColorModeContext.Provider>
   );
 }
 
