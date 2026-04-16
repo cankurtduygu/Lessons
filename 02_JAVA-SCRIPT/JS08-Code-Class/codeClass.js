@@ -112,3 +112,42 @@ beep()*/
 
 // ATM BAKIYE UYGULAMASI
 
+for (let i = 2; i <= 10; i += 2) {
+console.log(i);
+}
+
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+
+const kullanicilar = [
+  { isim: 'Ayşe', puan: 85 },
+  { isim: 'Mehmet', puan: 42 },
+  { isim: 'Zeynep', puan: 91 },
+  { isim: 'Can', puan: 38 },
+];
+
+
+const filtreliKullanicilar = kullanicilar.filter(user => user.puan > 50);
+const sadeceIsimler = filtreliKullanicilar.map(user =>  user.isim );
+
+const sonuc = JSON.stringify(kullanicilar
+    .filter(user => user.puan > 50) 
+    .map(user => user.isim)       
+); 
+console.log(sonuc)
+
+const siparisler = [
+  { id: 1, urun: 'Laptop', tutar: 15000, durum: 'tamamlandi' },
+  { id: 2, urun: 'Mouse', tutar: 150, durum: 'bekliyor' },
+  { id: 3, urun: 'Monitör', tutar: 2500, durum: 'tamamlandi' },
+  { id: 4, urun: 'Klavye', tutar: 450, durum: 'iptal' },
+  { id: 5, urun: 'Kamera', tutar: 1200, durum: 'tamamlandi' },
+];
+
+const tamamlandi = siparisler.filter(siparisler => siparisler.durum = 'tamamlandi')
+console.log(tamamlandi);
+const arttirildi = siparisler.map( siparis =>  siparis.tutar * 1.2);
+console.log(arttirildi);
